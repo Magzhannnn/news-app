@@ -1,0 +1,7 @@
+.wrapper {
+  @apply w-full h-auto relative pt-[80%] bg-[#f2f4f5];
+}
+
+.image {
+  @apply absolute top-0 left-0 w-full h-full object-cover;
+}

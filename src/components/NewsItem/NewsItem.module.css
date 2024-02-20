@@ -1,0 +1,19 @@
+.news-item {
+  @apply flex w-full gap-3;
+}
+
+.title {
+  @apply text-sm font-bold;
+}
+
+.extra {
+  @apply text-xs text-[#6C7072];
+}
+
+.info {
+  @apply flex gap-2 flex-col;
+}
+
+.wrapper {
+  @apply w-16 h-16 bg-[#f2f4f5] bg-center bg-cover flex-shrink-0;
+}

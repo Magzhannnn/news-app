@@ -1,0 +1,11 @@
+.header {
+  @apply flex flex-col gap-[10px] py-3 bg-white border border-b-[#f2f4f5];
+}
+
+.title {
+  @apply text-[32px] font-bold;
+}
+
+.date {
+  @apply text-base;
+}
