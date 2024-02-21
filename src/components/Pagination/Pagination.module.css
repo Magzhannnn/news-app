@@ -1,0 +1,23 @@
+.pagination {
+  @apply flex w-full gap-3 items-center justify-center;
+}
+
+.pageNumber {
+  @apply p-2 border-none bg-white cursor-pointer;
+}
+
+.disabled_number {
+  @apply text-slate-300 text-base cursor-default;
+}
+
+.list {
+  @apply flex items-center justify-center;
+}
+
+.arrow {
+  @apply border-none bg-white cursor-pointer;
+}
+
+.disabled_arrow {
+  @apply text-slate-300 cursor-default;
+}
