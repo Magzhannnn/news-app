@@ -1,0 +1,7 @@
+.search {
+  @apply flex w-full bg-white gap-3;
+}
+
+.input {
+  @apply w-full p-[10px] border border-[#f2f3f5] rounded-xl outline-none;
+}
