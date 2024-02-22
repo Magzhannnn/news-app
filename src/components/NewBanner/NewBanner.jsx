@@ -3,9 +3,9 @@ import styles from "./NewBanner.module.css";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import Container from "../../UI/Container/Container";
 import Image from "../Image/Image";
+import withSkeleton from "../../hocs/withSkeleton";
 
 const NewBanner = ({ item }) => {
-  
   return (
     <Container className={styles.banner}>
       <Image image={item?.image} />
@@ -17,4 +17,6 @@ const NewBanner = ({ item }) => {
   );
 };
 
-export default NewBanner;
+const NewsBannerWithSkeleton = withSkeleton(NewBanner, "banner", 1);
+
+export default NewsBannerWithSkeleton;

@@ -9,6 +9,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
 import Search from "../../components/Search/Search";
 import { useDebounce } from "../../hooks/useDebounce";
+import { PAGE_SIZE, TOTAL_PAGES } from "../../constant/constants";
 
 const Main = () => {
   const [news, setNews] = useState([]);
@@ -17,8 +18,6 @@ const Main = () => {
   const [categories, setCategories] = useState([]);
   const [keywords, setKeywords] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const totalPages = 10;
-  const pageSize = 10;
 
   const debouncedKeyWords = useDebounce(keywords, 1500);
 
@@ -27,7 +26,7 @@ const Main = () => {
 
     getNews({
       page_number: currentPage,
-      page_size: pageSize,
+      page_size: PAGE_SIZE,
       category: selectedCategory === "All" ? null : selectedCategory,
       keywords: debouncedKeyWords,
     })
@@ -55,7 +54,7 @@ const Main = () => {
   }, []);
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
+    if (currentPage < TOTAL_PAGES) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -80,28 +79,32 @@ const Main = () => {
 
       <Search keywords={keywords} setKeywords={setKeywords} />
 
-      {news.length > 0 && !isLoading ? (
+      <NewBanner isLoading={isLoading} item={news.length > 0 && news[0]} />
+
+      {/* {news.length > 0 && !isLoading ? (
         <NewBanner item={news[0]} />
       ) : (
         <Skeleton count={1} type="bunner" />
-      )}
+      )} */}
 
       <Pagination
-        totalPages={totalPages}
+        totalPages={TOTAL_PAGES}
         onNextPage={handleNextPage}
         onPrevPage={handlePrevPage}
         onPageClick={handlePageClick}
         currentPage={currentPage}
       />
 
-      {!isLoading ? (
+      <NewsList news={news} isLoading={isLoading} />
+
+      {/* {!isLoading ? (
         <NewsList news={news} />
       ) : (
         <Skeleton count={10} type="item" />
-      )}
+      )} */}
 
       <Pagination
-        totalPages={totalPages}
+        totalPages={TOTAL_PAGES}
         onNextPage={handleNextPage}
         onPrevPage={handlePrevPage}
         onPageClick={handlePageClick}

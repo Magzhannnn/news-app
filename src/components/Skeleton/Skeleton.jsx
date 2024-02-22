@@ -10,12 +10,12 @@ const Skeleton = ({ count = 1, type = "banner" }) => {
           {[...Array(count)].map((_, idx) => (
             <li
               key={idx}
-              className={type === "bunner" ? styles.bunner : styles.item}
+              className={type === "banner" ? styles.bunner : styles.item}
             ></li>
           ))}
         </ul>
       ) : (
-        <li className={type === "bunner" ? styles.bunner : styles.item}></li>
+        <li className={type === "banner" ? styles.bunner : styles.item}></li>
       )}
     </Container>
   );
