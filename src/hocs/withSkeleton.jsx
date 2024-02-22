@@ -5,8 +5,6 @@ function withSkeleton(Component, type, count) {
   return function WithSkeleton(props) {
     const { isLoading, ...restProps } = props;
 
-    console.log(isLoading);
-
     if (isLoading) {
       return <Skeleton type={type} count={count} />;
     }
