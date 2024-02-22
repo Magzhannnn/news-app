@@ -5,7 +5,7 @@ import Container from "../../UI/Container/Container";
 import Image from "../Image/Image";
 
 const NewBanner = ({ item }) => {
-  console.log(item);
+  
   return (
     <Container className={styles.banner}>
       <Image image={item?.image} />
