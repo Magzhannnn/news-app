@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Main.module.css";
 import Container from "../../UI/Container/Container";
 import NewBanner from "../../components/NewBanner/NewBanner";
