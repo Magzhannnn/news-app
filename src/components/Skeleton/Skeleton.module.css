@@ -1,5 +1,10 @@
-.list {
+.columnList {
   @apply flex flex-col gap-3;
+}
+
+.rowList {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  @apply grid w-full gap-3 box-border;
 }
 
 .bunner {

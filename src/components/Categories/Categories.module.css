@@ -1,6 +1,6 @@
 .categories {
   scrollbar-width: none;
-  @apply flex w-full gap-2 px-6 items-start box-border overflow-x-auto whitespace-nowrap;
+  @apply flex w-full gap-2 items-start box-border overflow-x-auto whitespace-nowrap;
 }
 
 .item,

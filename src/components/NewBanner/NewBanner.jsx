@@ -7,16 +7,15 @@ import withSkeleton from "../../hocs/withSkeleton";
 
 const NewBanner = ({ item }) => {
   return (
-    <Container className={styles.banner}>
+    <div className={styles.banner}>
       <Image image={item?.image} />
       <h3 className={styles.title}>{item.title}</h3>
       <p className={styles.extra}>
         {formatTimeAgo(item.published)} by {item.author}
       </p>
-    </Container>
+    </div>
   );
 };
 
-const NewsBannerWithSkeleton = withSkeleton(NewBanner, "banner", 1);
 
-export default NewsBannerWithSkeleton;
+export default NewBanner;

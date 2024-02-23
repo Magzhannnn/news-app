@@ -8,7 +8,7 @@ const Search = ({ keywords, setKeywords }) => {
   };
 
   return (
-    <Container className={styles.search}>
+    <div className={styles.search}>
       <input
         type="text"
         className={styles.input}
@@ -16,7 +16,7 @@ const Search = ({ keywords, setKeywords }) => {
         onChange={inputeKeyWordsHandle}
         placeholder="Javascript"
       />
-    </Container>
+    </div>
   );
 };
 

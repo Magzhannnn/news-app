@@ -6,11 +6,11 @@ import withSkeleton from "../../hocs/withSkeleton";
 
 const NewsList = ({ news }) => {
   return (
-    <Container className={styles["news-list"]}>
+    <div className={styles["news-list"]}>
       {news.map((item) => (
         <NewsItem key={item.id} item={item} />
       ))}
-    </Container>
+    </div>
   );
 };
 
