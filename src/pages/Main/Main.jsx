@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Main.module.css";
 import NewBanner from "../../components/NewBanner/NewBanner";
 import { getCategories, getNews } from "../../api/apiNews";
