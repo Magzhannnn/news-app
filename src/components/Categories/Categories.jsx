@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Categories.module.css";
 
 const Categories = ({ categories, selectedCategory, setSelectedCategory }) => {
-  
   return (
     <div className={styles.categories}>
       <button
