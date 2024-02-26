@@ -1,0 +1,7 @@
+.slider {
+  @apply flex w-full gap-2 items-center;
+}
+
+.arrow {
+  @apply border-none bg-white cursor-pointer;
+}
