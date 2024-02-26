@@ -1,4 +1,4 @@
 .banners {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  @apply grid w-full gap-3 box-border;
+  @apply grid w-full gap-3 box-border overflow-y-auto max-h-[1150px];
 }
