@@ -1,5 +1,3 @@
-import React from "react";
-import styles from "./PaginationWrapper.module.css";
 import Pagination from "../Pagination/Pagination";
 
 const PaginationWrapper = ({ top, bottom, children, ...paginationProps }) => {

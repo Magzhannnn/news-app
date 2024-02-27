@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Pagination.module.css";
 
 const Pagination = ({
@@ -11,7 +10,9 @@ const Pagination = ({
   return (
     <div className={styles.pagination}>
       <button
-        className={`${styles.arrow} ${currentPage <= 1 && styles.disabled_arrow}`}
+        className={`${styles.arrow} ${
+          currentPage <= 1 && styles.disabled_arrow
+        }`}
         onClick={onPrevPage}
       >
         {"<"}
