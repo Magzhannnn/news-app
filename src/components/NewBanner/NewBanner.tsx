@@ -1,11 +1,13 @@
-import React from "react";
 import styles from "./NewBanner.module.css";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
-import Container from "../../UI/Container/Container";
 import Image from "../Image/Image";
-import withSkeleton from "../../hocs/withSkeleton";
+import { INews } from "../../interfaces";
 
-const NewBanner = ({ item }) => {
+interface Props {
+  item: INews;
+}
+
+const NewBanner = ({ item }: Props) => {
   return (
     <div className={styles.banner}>
       <Image image={item?.image} />
@@ -16,6 +18,5 @@ const NewBanner = ({ item }) => {
     </div>
   );
 };
-
 
 export default NewBanner;

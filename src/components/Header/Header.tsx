@@ -1,4 +1,3 @@
-import React from "react";
 import { formatDate } from "../../helpers/formatDate";
 import styles from "./Header.module.css";
 import Container from "../../UI/Container/Container";
