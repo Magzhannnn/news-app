@@ -1,8 +1,12 @@
-import React from "react";
 import styles from "./NewsItem.module.css";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
+import { INews } from "../../interfaces/index";
 
-const NewsItem = ({ item }) => {
+interface Props {
+  item: INews;
+}
+
+const NewsItem = ({ item }: Props) => {
   return (
     <li className={styles["news-item"]}>
       <div

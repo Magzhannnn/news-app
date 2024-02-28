@@ -1,13 +1,24 @@
-import React from "react";
+import { DirectionType, SkeletonType } from "../../interfaces/index";
 import styles from "./Skeleton.module.css";
-import Container from "../../UI/Container/Container";
 
-const Skeleton = ({ count = 1, type = "banner", direction = "column" }) => {
+interface Props {
+  type?: SkeletonType;
+  count?: number;
+  direction?: DirectionType;
+}
+
+const Skeleton = ({
+  count = 1,
+  type = "banner",
+  direction = "column",
+}: Props) => {
   return (
     <>
       {count > 1 ? (
         <ul
-          className={direction === "column" ? styles.columnList : styles.rowList}
+          className={
+            direction === "column" ? styles.columnList : styles.rowList
+          }
         >
           {[...Array(count)].map((_, idx) => (
             <li
