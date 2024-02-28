@@ -16,6 +16,14 @@ export interface NewsApiResponse {
   status: string;
 }
 
+export interface IPaginationProps {
+  totalPages: number;
+  onNextPage: () => void;
+  onPrevPage: () => void;
+  onPageClick: (page: number) => void;
+  currentPage: number;
+}
+
 export interface CategoriesApiResponse {
   categories: CategoriesType[];
   description: number;
@@ -32,7 +40,8 @@ export interface IFilters {
 export type ParamsType = Partial<IFilters>;
 
 type UrlType = string | null | undefined;
-type NewsId = string;
+export type SkeletonType = "banner" | "item";
+export type DirectionType = "column" | "row";
 
 export type CategoriesType =
   | "regional"

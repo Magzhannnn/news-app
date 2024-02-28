@@ -4,7 +4,7 @@ import NewBanner from "../NewBanner/NewBanner";
 import { INews } from "../../interfaces";
 
 interface Props {
-  banners?: INews[];
+  banners?: INews[] | null;
 }
 
 const BannersList = ({ banners }: Props) => {
@@ -17,6 +17,6 @@ const BannersList = ({ banners }: Props) => {
   );
 };
 
-const BannersListWithSkeleton = withSkeleton(BannersList, "banner", 10, "row");
+const BannersListWithSkeleton = withSkeleton<Props>(BannersList, "banner", 10, "row");
 
 export default BannersListWithSkeleton;
