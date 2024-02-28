@@ -3,7 +3,7 @@ import {
   CategoriesApiResponse,
   NewsApiResponse,
   ParamsType,
-} from "../interfaces";
+} from "../interfaces/index";
 
 const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -31,9 +31,9 @@ export const getNews = async (
   }
 };
 
-export const getLatestNews = async (): Promise<CategoriesApiResponse> => {
+export const getLatestNews = async (): Promise<NewsApiResponse> => {
   try {
-    const response = await axios.get<CategoriesApiResponse>(
+    const response = await axios.get<NewsApiResponse>(
       `${BASE_URL}latest-news`,
       {
         params: {
@@ -45,17 +45,20 @@ export const getLatestNews = async (): Promise<CategoriesApiResponse> => {
     return response.data;
   } catch (error) {
     console.log(error);
-    return { categories: [], description: 1, status: "error" };
+    return { news: [], page: 1, status: "error" };
   }
 };
 
-export const getCategories = async () => {
+export const getCategories = async (): Promise<CategoriesApiResponse> => {
   try {
-    const response = await axios.get(`${BASE_URL}available/categories`, {
-      params: {
-        apiKey: API_KEY,
-      },
-    });
+    const response = await axios.get<CategoriesApiResponse>(
+      `${BASE_URL}available/categories`,
+      {
+        params: {
+          apiKey: API_KEY,
+        },
+      }
+    );
 
     return response.data;
   } catch (error) {
