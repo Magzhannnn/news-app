@@ -21,3 +21,13 @@
 .disabled_arrow {
   @apply text-slate-300 cursor-default;
 }
+
+.pagination.dark .pageNumber,
+.pagination.dark .arrow {
+  @apply bg-[#23272f] text-[#f6f7f9];
+}
+
+.pagination.light .pageNumber,
+.pagination.light .arrow {
+  @apply bg-white text-black;
+}
