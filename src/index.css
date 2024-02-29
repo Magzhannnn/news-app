@@ -10,3 +10,27 @@
   box-sizing: border-box;
   font-family: "Inter", "sans-serif";
 }
+
+.containers {
+  width: 100%;
+}
+
+.app.dark .containers {
+  background-color: #23272f;
+}
+
+.app.light .containers {
+  background-color: white;
+}
+
+.app.dark p,
+.app.dark h3,
+.app.dark h1 {
+  color: #f6f7f9;
+}
+
+.app.light p,
+.app.light h3,
+.app.light h1 {
+  color: black;
+}

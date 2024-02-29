@@ -15,5 +15,5 @@
 }
 
 .wrapper {
-  @apply w-16 h-16 bg-[#f2f4f5] bg-center bg-cover flex-shrink-0 border;
+  @apply w-16 h-16 bg-[#f2f4f5] bg-center bg-cover flex-shrink-0;
 }

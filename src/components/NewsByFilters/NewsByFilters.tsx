@@ -10,6 +10,7 @@ import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
 import { NewsApiResponse, ParamsType } from "../../interfaces";
 
 const NewsByFilters = () => {
+
   const { filters, changeFilter } = useFilters({
     page_number: 1,
     page_size: PAGE_SIZE,
@@ -42,7 +43,10 @@ const NewsByFilters = () => {
 
   return (
     <section className={styles.section}>
-      <NewsFilters filters={filters} changeFilter={changeFilter} />
+      <NewsFilters
+        filters={filters}
+        changeFilter={changeFilter}
+      />
 
       <PaginationWrapper
         top={true}
