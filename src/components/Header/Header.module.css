@@ -1,5 +1,9 @@
 .header {
-  @apply flex flex-col gap-[10px] py-3 bg-white border border-b-[#f2f4f5];
+  @apply flex justify-between items-center py-3 bg-white border border-b-[#f2f4f5];
+}
+
+.info {
+  @apply flex flex-col gap-3;
 }
 
 .title {
@@ -8,4 +12,12 @@
 
 .date {
   @apply text-base;
+}
+
+.dark {
+  @apply bg-[#23272f] text-[#f6f7f9] border-none;
+}
+
+.light {
+  @apply bg-white text-black;
 }

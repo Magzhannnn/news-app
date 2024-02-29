@@ -3,5 +3,13 @@
 }
 
 .arrow {
-  @apply border-none bg-white cursor-pointer;
+  @apply border-none cursor-pointer;
+}
+
+.dark {
+  @apply bg-[#23272f] text-[#f6f7f9];
+}
+
+.light {
+  @apply bg-white text-black;
 }
