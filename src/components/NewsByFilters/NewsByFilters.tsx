@@ -1,52 +1,49 @@
 import styles from "./NewsByFilters.module.css";
 import NewsList from "../NewsList/NewsList";
-import { PAGE_SIZE, TOTAL_PAGES } from "../../constant/constants";
+import { TOTAL_PAGES } from "../../constant/constants";
 import NewsFilters from "../NewsFilters/NewsFilters";
-import { useFilters } from "../../hooks/useFilters";
-import { useFetch } from "../../hooks/useFetch";
 import { useDebounce } from "../../hooks/useDebounce";
-import { getNews } from "../../api/apiNews";
 import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
-import { NewsApiResponse, ParamsType } from "../../interfaces";
+import { useGetNewsQuery } from "../../store/services/newsApi";
+import { useAppDispatch, useAppSelector } from "../../store";
+import { setFilters } from "../../store/slices/newsSlice";
 
 const NewsByFilters = () => {
+  const dispatch = useAppDispatch();
 
-  const { filters, changeFilter } = useFilters({
-    page_number: 1,
-    page_size: PAGE_SIZE,
-    category: null,
-    keywords: "",
-  });
+  const filters = useAppSelector((state) => state.news.filters);
+  const news = useAppSelector((state) => state.news.news);
 
   const debouncedKeyWords = useDebounce(filters.keywords, 1500);
 
-  const { data, isLoading } = useFetch<NewsApiResponse, ParamsType>(getNews, {
+  const { isLoading } = useGetNewsQuery({
     ...filters,
     keywords: debouncedKeyWords,
   });
 
   const handleNextPage = () => {
     if (filters.page_number < TOTAL_PAGES) {
-      changeFilter("page_number", filters.page_number + 1);
+      dispatch(
+        setFilters({ key: "page_number", value: filters.page_number + 1 })
+      );
     }
   };
 
   const handlePrevPage = () => {
     if (filters.page_number > 1) {
-      changeFilter("page_number", filters.page_number - 1);
+      dispatch(
+        setFilters({ key: "page_number", value: filters.page_number - 1 })
+      );
     }
   };
 
   const handlePageClick = (pageNumber: number) => {
-    changeFilter("page_number", pageNumber);
+    dispatch(setFilters({ key: "page_number", value: pageNumber }));
   };
 
   return (
     <section className={styles.section}>
-      <NewsFilters
-        filters={filters}
-        changeFilter={changeFilter}
-      />
+      <NewsFilters filters={filters} />
 
       <PaginationWrapper
         top={true}
@@ -57,7 +54,7 @@ const NewsByFilters = () => {
         onPageClick={handlePageClick}
         currentPage={filters.page_number}
       >
-        <NewsList news={data?.news} isLoading={isLoading} />
+        <NewsList news={news} isLoading={isLoading} />
       </PaginationWrapper>
     </section>
   );
