@@ -18,8 +18,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // ... your other compiler options
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "shared/interfaces/vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
