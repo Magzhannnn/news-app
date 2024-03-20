@@ -1,0 +1,3 @@
+.section {
+  @apply flex overflow-hidden box-border flex-col w-full gap-8;
+}
