@@ -1,5 +1,5 @@
 .card {
-  @apply flex w-full gap-3 items-center;
+  @apply flex w-full gap-3;
 }
 
 .banner {

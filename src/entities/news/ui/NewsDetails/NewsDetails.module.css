@@ -1,0 +1,28 @@
+.details {
+  @apply grid grid-cols-1 md:grid-cols-2;
+}
+
+.extra {
+  @apply text-xs text-[#6C7072];
+}
+
+.description {
+  @apply py-5 md:px-5
+}
+
+.anchor {
+  @apply text-blue-600 hover:underline
+}
+
+.description > * {
+  @apply mb-2
+}
+
+.categories {
+  scrollbar-width: none;
+  @apply flex w-full gap-2 items-start box-border overflow-x-auto whitespace-nowrap;
+}
+
+.active {
+  @apply flex items-center justify-center py-[6px] px-4 border-none rounded-[32px] bg-[#e7e7ff] text-[#6b4eff];
+}
