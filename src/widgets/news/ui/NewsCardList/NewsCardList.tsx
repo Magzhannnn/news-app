@@ -6,13 +6,19 @@ interface Props {
   news?: INews[];
   type?: "banner" | "item";
   direction?: "row" | "column";
+  viewNewsSlot?: (news: INews) => React.ReactNode;
 }
 
-const NewsList = ({ news, type = "item" }: Props) => {
+const NewsList = ({ news, type = "item", viewNewsSlot }: Props) => {
   return (
     <ul className={`${type === "item" ? styles.items : styles.banners}`}>
       {news?.map((item) => (
-        <NewsCard key={item.id} item={item} type={type} />
+        <NewsCard
+          key={item.id}
+          item={item}
+          type={type}
+          viewNewsSlot={viewNewsSlot}
+        />
       ))}
     </ul>
   );
